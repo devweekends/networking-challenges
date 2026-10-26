@@ -65,7 +65,7 @@ start_server 127.0.0.1
 save_listening "$HERE/listen-loopback.txt"
 RC=0
 ip netns exec laptop curl -sS -m 3 -o /dev/null http://192.168.1.80:8080/ || RC=$?
-echo "curl from the laptop exited with $RC. Exit code 7 means: connection refused."
+echo "curl from the laptop exited with $RC. Exit code 7 means curl could not connect. Here that is a refused connection: nothing listens on that address and port."
 
 # Step 4: the server listens on 0.0.0.0. 0.0.0.0 means "any address this computer has".
 echo "--- 4. the server listens on 0.0.0.0"

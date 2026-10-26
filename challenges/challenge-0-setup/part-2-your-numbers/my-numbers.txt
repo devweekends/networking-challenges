@@ -1,0 +1,12 @@
+# Paste your own numbers after each label. Copy them from your computer, not from the lab.
+# Lines that start with # are ignored. Keep each label. Write one number per line.
+# address: your computer's IPv4 address, four numbers like 192.168.1.23
+# mask: dotted like 255.255.255.0, or hex like 0xffffff00 (macOS prints hex)
+# gateway: your router, four numbers
+# dns: the IPv4 DNS server, four numbers
+# public: the IPv4 address a website sees. Your repository may be public. If so, write 203.0.113.45 here.
+address:
+mask:
+gateway:
+dns:
+public:

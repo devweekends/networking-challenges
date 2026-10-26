@@ -40,17 +40,30 @@ The lab uses `docker run --privileged`. That gives the lab container wide power 
 |---|---|---|---|
 | 0 | `challenges/challenge-0-setup` | 1 install, 2 your numbers | Start the lab, pass the setup checker, and read your own network numbers |
 | 1 | `challenges/challenge-1-two-computers` | 1 virtual cable, 2 wrong mask | Make two computers talk, capture it, then make them disagree |
+| 2 | `challenges/challenge-2-router` | 1 two subnets and a router | Build a router between two networks, make a ping cross it, and see which addresses change |
+| 3 | `challenges/challenge-3-conversation` | 1 listening and the handshake | Run a server on two listening addresses, capture the handshake, and read both sides with `ss` |
+| 4 | `challenges/challenge-4-home-router` | 1 masquerade, 2 forwarding and a guest network | Put devices behind a router with NAT, read the NAT table, forward a port, and keep a guest away from home |
+| 5 | `challenges/challenge-5-dhcp-dns` | 1 leases and names | Make the router hand out addresses and names with dnsmasq |
+| 6 | `challenges/challenge-6-capstone` | 1 addresses and routes, 2 NAT, forwarding and isolation, 3 DHCP and DNS, 4 break and fix | Build a whole small internet from your own scripts, then find three faults that a script injects |
 
 More challenges are added as the course goes on.
+
+How much help you get changes as the course goes on:
+
+| Challenges | Help |
+|---|---|
+| 0 and 1 | **Guided.** Every command is typed by you, one at a time, and every line is explained |
+| 2, 3, 4 and 5 | **Gapped.** The script is nearly complete. A few lines are missing and marked `TODO`. The test tells you which gap is wrong |
+| 6 | **Open with hints.** You get the goal, the tests and a ladder of hints. You write the scripts, starting from your own earlier ones |
 
 Each part is a folder with the same files:
 
 | File | What it is |
 |---|---|
 | `README.md` | Words to know, what you build, the steps, and where each number comes from |
-| One script | The commands, with comments. You can run it, or type its lines one by one |
+| One script | The commands, with comments. You can run it, or type its lines one by one. In challenges 2 to 5, some lines are gaps for you to fill. In challenge 6 you write it |
 | `results.md` | Your own output. You fill this in and commit it |
-| `test.sh` | Run it in the lab. It says `PASS` or `FAIL` for each check |
+| `test.sh` | Run it in the lab. It says `PASS` or `FAIL` for each check. When a check fails, read its message: it names the gap or the thing to look at |
 
 Run a test from the lab like this:
 
@@ -83,7 +96,7 @@ It prints one line per check. Read the first `FAIL` line. The word after `FAIL` 
 | Folder | Contents |
 |---|---|
 | `lab/` | The lab image recipe (`Dockerfile`) and the start scripts |
-| `toolkit/` | Shared helpers (`lib.sh`) and the setup checker (`check-setup.sh`) |
+| `toolkit/` | Shared helpers (`lib.sh`), the DHCP lease script (`udhcpc-hook.sh`) and the setup checker (`check-setup.sh`) |
 | `challenges/` | One folder per challenge, one subfolder per part |
 
 ## Line endings

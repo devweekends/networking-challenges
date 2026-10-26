@@ -44,7 +44,7 @@ You can run the whole script with `bash cable.sh`. Or you can type its lines one
 |---|---|---|---|
 | 1 | `bash cable.sh` | Builds everything below. Safe to run again | whole file |
 | 2 | (delete the old network) | Removes what the course built before, so you start clean | [cable.sh#L12](cable.sh#L12) |
-| 3 | `ip netns add laptop` | Makes the first computer | [cable.sh#L15](cable.sh#L15) (`ns_add` runs this command and writes the name in a list, see [lib.sh#L42](../../../toolkit/lib.sh#L42)) |
+| 3 | `ip netns add laptop` | Makes the first computer | [cable.sh#L15](cable.sh#L15) (`ns_add` runs this command and writes the name in a list, see [lib.sh#L48](../../../toolkit/lib.sh#L48)) |
 | 4 | `ip netns add phone` | Makes the second computer | [cable.sh#L16](cable.sh#L16) |
 | 5 | `ip link add veth-laptop type veth peer name veth-phone` | Makes one cable with two ends | [cable.sh#L19](cable.sh#L19) |
 | 6 | `ip link set veth-laptop netns laptop` | Plugs one end into the laptop | [cable.sh#L22](cable.sh#L22) |

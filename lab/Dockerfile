@@ -9,6 +9,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         iproute2 nftables tcpdump dnsmasq-base bind9-dnsutils traceroute \
         iputils-ping netcat-openbsd curl conntrack busybox nano isc-dhcp-client \
+        bird2 wireguard-tools mtr-tiny iperf3 nmap whois \
     && rm -rf /var/lib/apt/lists/*
 
 # A marker file: toolkit/check-setup.sh looks for it to know it runs inside the lab.

@@ -46,6 +46,14 @@ The lab uses `docker run --privileged`. That gives the lab container wide power 
 | 5 | `challenges/challenge-5-dhcp-dns` | 1 leases and names | Make the router hand out addresses and names with dnsmasq |
 | 6 | `challenges/challenge-6-capstone` | 1 addresses and routes, 2 NAT, forwarding and isolation, 3 DHCP and DNS, 4 break and fix | Build a whole small internet from your own scripts, then find three faults that a script injects |
 
+Part 2 of the course, "Beyond your home network":
+
+| # | Folder | Parts | You will |
+|---|---|---|---|
+| 7 | `challenges/challenge-7-bgp` | 1 three networks, 2 read and withdraw, 3 backup link, 4 hijack and filter | Run three networks that talk BGP, watch a route appear and disappear, add a backup link with your own preference, then steal a block and stop it |
+| 8 | `challenges/challenge-8-vpn` | 1 office and café, 2 the tunnel, 3 what each side sees, 4 full and split tunnel | Build a WireGuard VPN between two networks behind NAT and prove with captures what each network sees |
+| 9 | `challenges/challenge-9-toolbox` | 0 the broken network, 1 Wireshark, 2 tcpdump, 3 mtr, 4 dig, 5 nmap, 6 iperf3, 7 curl | Find four hidden faults in a broken network, one tool at a time, and save the evidence |
+
 More challenges are added as the course goes on.
 
 How much help you get changes as the course goes on:
@@ -55,6 +63,7 @@ How much help you get changes as the course goes on:
 | 0 and 1 | **Guided.** Every command is typed by you, one at a time, and every line is explained |
 | 2, 3, 4 and 5 | **Gapped.** The script is nearly complete. A few lines are missing and marked `TODO`. The test tells you which gap is wrong |
 | 6 | **Open with hints.** You get the goal, the tests and a ladder of hints. You write the scripts, starting from your own earlier ones |
+| 7, 8 and 9 | **Guided, then gapped.** The first part of each is guided; the later parts have `TODO` gaps. Challenge 9 asks you to choose the tool yourself in its last round |
 
 Each part is a folder with the same files:
 

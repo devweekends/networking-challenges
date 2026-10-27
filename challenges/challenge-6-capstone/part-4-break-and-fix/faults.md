@@ -32,7 +32,7 @@ When you find a fault, fix **only that one**, run the test again, and write it d
 ## Why some faults are not drawn together
 
 - F2 and F3 each break the way out of the home router, and hide each other. F3 and F5 do too.
-- F1 and F7 would be hidden if the way out of the home router is already broken (F2 or F3): the forwarded port and the guest test would then fail for another reason. F1 and F7 also stay apart from each other.
+- F1 would be hidden if the way out of the home router is already broken (F2 or F3): the forwarded port would then fail for another reason. F7 would be hidden only by F2 (forwarding off), because guest traffic to the home network never uses the way out. F1 and F7 also stay apart from each other.
 - F4 and F6 cannot both be seen from a device that has no lease.
 
 One pair can be drawn together even though it looks alike: F2 with F5. Fix F2 first, and then the symptom of F5 shows. Find one, fix it, test, then look for the next.

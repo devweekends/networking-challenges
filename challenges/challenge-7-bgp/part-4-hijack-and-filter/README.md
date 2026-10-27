@@ -103,7 +103,7 @@ The AS path does not help. It says `AS64497i`: r2 is the origin. A router does n
 
 ```
 filter owner_only {
-  if net = 198.51.100.0/24 && bgp_path.last = 64496 then accept;
+  # Gap 2: one line that accepts the owner's own block
   reject;
 }
 ```
@@ -111,10 +111,8 @@ filter owner_only {
 | Line | Meaning |
 |---|---|
 | `filter owner_only {` | A named filter. `owner_only` is a name we chose |
-| `if net = 198.51.100.0/24` | The block must be exactly this one. A `/25` inside it is a different block, so it does not match |
-| `&& bgp_path.last = 64496` | And its origin must be AS64496, the owner. `&&` means "and" |
-| `then accept;` | Keep this route |
-| `reject;` | Everything else is dropped |
+| Gap 2 | One `if ... then accept;` line. It checks two things, joined by `&&` ("and"): the block is exactly `198.51.100.0/24` (BIRD calls the block `net`), and its origin is AS64496, the owner (`bgp_path.last`). A `/25` inside the block is a different block, so it must not match |
+| `reject;` | Everything the accept line did not keep is dropped |
 | `}` | The end of the filter |
 
 The session line `import filter owner_only;` (Gap 3) runs it on every route from that neighbour.

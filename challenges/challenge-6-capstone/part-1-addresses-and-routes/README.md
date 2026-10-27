@@ -85,6 +85,8 @@ Open one step at a time. Stop as soon as you can go on.
 
 If you are stuck, work down in this order: `ip route get <destination>` in each computer, then `ping` the next hop, then `sysctl net.ipv4.ip_forward` in each router.
 
+If you are still stuck after the hints, build the finished network of this part with `bash /work/toolkit/restore.sh 6.1`, compare it with yours, and go on. It changes only the lab network, not your script. It runs the course's own answer: read [If you are stuck on a part](../../../README.md#if-you-are-stuck-on-a-part) first.
+
 ## Capture to commit
 
 In [results.md](results.md): `ip addr` and `ip route` for `hrouter` and `prouter`, and the `tcpdump -n` on the home router's outside interface during the failing ping, showing the private source leaving. Use `-i` with the interface that holds `198.51.100.2`, and the filter `icmp`.

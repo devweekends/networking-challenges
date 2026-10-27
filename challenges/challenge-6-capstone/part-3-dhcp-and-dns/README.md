@@ -89,6 +89,8 @@ Open one step at a time. Stop as soon as you can go on.
 
 If you are stuck, read the log, watch ports 67 and 68 while one device asks, and ask the router directly with `dig @ADDRESS`. Fallback: parts 1 and 2 still work without DHCP.
 
+If your part 2 is not ready, have your script run `bash /work/toolkit/restore.sh 6.2` instead of your own part 2 script. It builds the course's parts 1 and 2 network. It runs the course's own answer: read [If you are stuck on a part](../../../README.md#if-you-are-stuck-on-a-part) first.
+
 ## Captures to commit
 
 In [results.md](results.md): the lease lines for both subnets (the `lease applied` lines), one `tcpdump -n` of ports 67 and 68 during a lease, and the `dig` answer.

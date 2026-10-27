@@ -111,6 +111,14 @@ If you are stuck:
 3. Does the server show the packet arriving? Capture on the outside plug.
 4. Is the interface name in the rule the one on the outside? `ip netns exec router ip addr`
 
+If you are still stuck after the hints, build the finished network of this part, so you can do the capture or go on to part 2:
+
+```
+bash /work/toolkit/restore.sh 4.1
+```
+
+It changes only the lab network, not your `masquerade.sh`. The files it writes go to `/tmp/networking-restore/`, so the test's checks for your three `.txt` files still need your own script. It runs the course's own answer: read [If you are stuck on a part](../../../README.md#if-you-are-stuck-on-a-part) first.
+
 ## Where each number comes from
 
 | Number | Where it comes from |

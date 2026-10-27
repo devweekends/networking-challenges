@@ -107,6 +107,14 @@ If you are stuck:
 3. Did the guest rule land after a rule that accepts everything? Order matters: the first match wins.
 4. Does `ip netns exec router nft list ruleset` show both new rules?
 
+If your part 1 does not pass its test yet, run your part 2 on top of the course's part 1 instead of your own:
+
+```
+PART1=/work/toolkit/restore/4.1.sh bash forwarding-guest.sh
+```
+
+If you are stuck on part 2 itself, build its finished network with `bash /work/toolkit/restore.sh 4.2`. Its `outside-tests.txt` goes to `/tmp/networking-restore/`, so the Gap 3 check still needs your own script. Both run the course's own answers: read [If you are stuck on a part](../../../README.md#if-you-are-stuck-on-a-part) first.
+
 ## Where each number comes from
 
 | Number | Where it comes from |

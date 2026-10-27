@@ -84,6 +84,8 @@ Open one step at a time. Stop as soon as you can go on.
 
 If you are stuck: `nft list ruleset` in `hrouter`, then `tcpdump -n` on the outside interface to see which source address leaves. Fallback: your part 1 still works. Fix one rule at a time and run the test again.
 
+If your part 1 is not ready, have your script run `bash /work/toolkit/restore.sh 6.1` instead of your own part 1 script. It builds the course's part 1 network. It runs the course's own answer: read [If you are stuck on a part](../../../README.md#if-you-are-stuck-on-a-part) first.
+
 ## Captures to commit
 
 These feed your demo. In [results.md](results.md):

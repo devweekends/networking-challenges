@@ -116,6 +116,14 @@ If you are stuck:
 3. Does `ip netns exec server ip route` show the way back to `192.168.1.0/24`?
 4. Run `tcpdump -n -i veth-rin icmp` and `tcpdump -n -i veth-rout icmp` in the router, send one ping, and find where the echo stops.
 
+If you are still stuck after the hints, build the finished network of this part and go on with steps 12 to 14:
+
+```
+bash /work/toolkit/restore.sh 2.1
+```
+
+It changes only the lab network, not your `router.sh`. It runs the course's own answer: read [If you are stuck on a part](../../../README.md#if-you-are-stuck-on-a-part) first.
+
 ## Where each number comes from
 
 | Number | Where it comes from |

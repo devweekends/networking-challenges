@@ -43,6 +43,15 @@ Do not run `break.sh --list` on your own seed. It prints the answer, and finding
 - If you break more than `break.sh` did, run `bash break.sh YOUR_SEED` again with the same seed. It rebuilds the healthy network and injects the same three faults.
 - Every command in your write-up must be one you really ran.
 
+If your part 3 is not ready, build the healthy network with the course's part 3, then inject the faults into it:
+
+```
+bash /work/toolkit/restore.sh 6.3
+bash break.sh YOUR_SEED --no-rebuild
+```
+
+To start again, run both lines again. The part 3 test (which `bash test.sh` runs) and one of the faults still read your own `part-3-dhcp-and-dns/dnsmasq.conf`, so finish that file first: hints 3 and 4 in part 3 give it line by line. The restore runs the course's own answer: read [If you are stuck on a part](../../../README.md#if-you-are-stuck-on-a-part) first.
+
 ## Hints
 
 Open one step at a time. Stop as soon as you can go on.

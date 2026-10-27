@@ -100,12 +100,25 @@ It prints one line per check. Read the first `FAIL` line. The word after `FAIL` 
 | `crlf-line-endings` | A script has Windows line endings. The checker prints the fix |
 | `repo-not-visible` | Your repository folder is not at `/work`. Start the lab from inside the repository |
 
+## If you are stuck on a part
+
+Some parts build on the part before. If you are stuck, you can build the network from the end of an earlier part and keep going. Run this **in the lab**:
+
+```
+bash /work/toolkit/restore.sh --list
+bash /work/toolkit/restore.sh 4.1
+```
+
+The first line lists the parts you can restore (2.1, 4.1, 4.2, 6.1, 6.2 and 6.3) and what each one builds. The second builds the network from the end of challenge 4, part 1. A restore changes only the lab network. It never changes your own files.
+
+The restore builds in `toolkit/restore/` are the course's own answers. Read them after you have tried, not before. If you used one, say so in your capstone demo.
+
 ## What is in each folder
 
 | Folder | Contents |
 |---|---|
 | `lab/` | The lab image recipe (`Dockerfile`) and the start scripts |
-| `toolkit/` | Shared helpers (`lib.sh`), the DHCP lease script (`udhcpc-hook.sh`) and the setup checker (`check-setup.sh`) |
+| `toolkit/` | Shared helpers (`lib.sh`), the DHCP lease script (`udhcpc-hook.sh`), the setup checker (`check-setup.sh`) and the restore script (`restore.sh`, which runs the builds in `toolkit/restore/`) |
 | `challenges/` | One folder per challenge, one subfolder per part |
 
 ## Line endings

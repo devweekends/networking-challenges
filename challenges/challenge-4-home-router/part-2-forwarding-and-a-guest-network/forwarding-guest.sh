@@ -10,7 +10,7 @@ HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$HERE/../../../toolkit/lib.sh"
 require_root
 
-PART1="$HERE/../part-1-masquerade/masquerade.sh"
+PART1="${PART1:-$HERE/../part-1-masquerade/masquerade.sh}"
 HOMEWWW=/tmp/networking-course-www-home
 
 # Step 1: rebuild the network from part 1 (laptop, phone, router, server, masquerade).
